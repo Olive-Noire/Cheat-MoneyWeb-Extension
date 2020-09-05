@@ -1,0 +1,58 @@
+{
+
+    "name": "Cheat MoneyWeb",
+    "description": "extension de cheat pour MoneyWeb (à utiliser en locale) !!",
+    "version": "0.1",
+
+    "background" : {
+
+        "scripts": [
+
+            "API/jquery-3.5.1.slim.js",
+            "API/jquery-3.5.1.js",
+            "Scripts/JS/Extension/index.js",
+            "Scripts/JS/Extension/Installed.js",
+            "Scripts/JS/Extension/background.js",
+            "Scripts/JS/Extension/Cheat.js",
+            "Scripts/JS/Links/popup.js"
+        
+        ],
+        "persistent": true
+
+    },
+
+    "permissions": [
+
+        "webNavigation",
+        "tabs"
+
+    ],
+
+    "browser_action": {
+
+        "default_icon": "Media/Images/icon.png",
+        "default_popup": "InterfaceExtension/popup.html"
+
+    },
+
+    "content_scripts": [{
+        
+        "css": ["./Interfaces/CSS/ProfileCheat.css"],
+
+        "js": [
+
+            "API/jquery-3.5.1.slim.js",
+            "API/jquery-3.5.1.js",
+            "./Scripts/JS/Extension/Cheat.js",
+            "./Scripts/JS/Extension/Cheat/CheatProfiles.js"
+        
+        ],
+
+
+        "matches": ["http://localhost/MoneyWeb/main/Profile.php","http://localhost/MoneyWeb/main/MoneyWeb.php"]
+    }],
+
+    "manifest_version": 2
+
+
+}
